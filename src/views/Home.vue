@@ -24,7 +24,6 @@
           <v-list-item-content>
             <v-list-item-title
               class="headline"
-              v-if="forecast.sys"
             >{{forecast.name}} , {{forecast.sys.country}}
             </v-list-item-title>
           </v-list-item-content>
@@ -33,11 +32,10 @@
         <!-- Current Temperature and Icon -->
         <v-card-text>
           <v-row align="center">
-            <v-col class="display-3" cols="6" v-if="forecast.main">{{forecast.main.temp}}&deg;C</v-col>
+            <v-col class="display-3" cols="6" >{{forecast.main.temp}}&deg;C</v-col>
             <v-col
               class="display-3"
               cols="6"
-              v-if="forecast.weather"
             >{{icons[forecast.weather[0].main]}}</v-col>
           </v-row>
         </v-card-text>
@@ -45,7 +43,7 @@
         <!-- Temperature Min and Max -->
         <v-list-item>
           <v-list-item-subtitle
-            v-if="forecast.main"
+            
           >{{forecast.main.temp_min}}&deg;C / {{forecast.main.temp_max}}&deg;C</v-list-item-subtitle>
         </v-list-item>
 
@@ -57,17 +55,17 @@
         </v-list-item>
 
         <v-list-item>
-          <v-list-item-icon v-if="forecast.wind">
+          <v-list-item-icon >
             <v-icon>mdi-send</v-icon>
           </v-list-item-icon>
-          <v-list-item-subtitle v-if="forecast.wind">{{forecast.wind.speed}}km/hr</v-list-item-subtitle>
+          <v-list-item-subtitle>{{forecast.wind.speed}}km/hr</v-list-item-subtitle>
         </v-list-item>
 
         <v-list-item>
-          <v-list-item-icon v-if="forecast.clouds">
+          <v-list-item-icon >
             <v-icon>mdi-cloud-download</v-icon>
           </v-list-item-icon>
-          <v-list-item-subtitle v-if="forecast.clouds">{{forecast.clouds.all}}%</v-list-item-subtitle>
+          <v-list-item-subtitle >{{forecast.clouds.all}}%</v-list-item-subtitle>
         </v-list-item>
       </v-card>
     </div>
