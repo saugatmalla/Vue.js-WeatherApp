@@ -110,7 +110,7 @@ export default {
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=" +
         this.city +
-        "ca&appid=37c74120d05b58e1807a5286598c9d90&units=metric"
+        "&appid=37c74120d05b58e1807a5286598c9d90&units=metric"
     )
       .then(response => response.json())
       .then(data => {
@@ -124,7 +124,7 @@ export default {
       fetch(
         "https://api.openweathermap.org/data/2.5/weather?q=" +
           this.city +
-          "ca&appid=37c74120d05b58e1807a5286598c9d90&units=metric"
+          "&appid=37c74120d05b58e1807a5286598c9d90&units=metric"
       )
         .then(response => response.json())
         .then(data => {
