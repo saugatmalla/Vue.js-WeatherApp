@@ -1,9 +1,11 @@
 <template>
-  <h1>This is weekly forecast page.</h1>
+  <div>
+     <h1>This is a test project.</h1>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'weekly',
-}
+  name: "weekly",
+};
 </script>

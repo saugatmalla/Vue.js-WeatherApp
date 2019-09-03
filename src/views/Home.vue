@@ -8,7 +8,7 @@
           single-line
           v-model="location"
           @keyup.enter="update"
-          placeholder="City,country"
+          placeholder="City, country"
         ></v-text-field>
 
         <v-btn icon type="submit" @click="update">

@@ -11,9 +11,9 @@
 
     <v-navigation-drawer v-model="drawer" app class="primary">
       <v-list>
-        <v-list-item v-for="link in links" :key="link" router :to="link.route">
+        <v-list-item v-for="link in links" :key="link.id" router :to="link.route" @click="drawer = false">
           <v-list-item-content >
-            <v-list-item-title class="white--text text-center" @click="drawer = !drawer">
+            <v-list-item-title class="white--text text-center" >
               {{link.name}}
             </v-list-item-title>
           
@@ -30,8 +30,8 @@ export default {
     return {
       drawer: false,
       links: [
-        {name: "Home", route: "/"},
-        {name: "Weekly", route: "/weekly"}
+        {id: 0, name: "Home", route: "/"},
+        {id: 1, name: "About", route: "/weekly"}
       ]
     };
   }
