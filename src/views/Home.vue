@@ -75,7 +75,7 @@ export default {
   data() {
     return {
       location: "",
-      errors: ""
+      
     };
   },
 
@@ -88,24 +88,27 @@ export default {
 
   methods: {
     update: function() {
-      axios
-        .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${ 
-            this.location
-          }&appid=37c74120d05b58e1807a5286598c9d90&units=metric`,
-        )
-        .then(data => {
-          this.$store.state.forecast = data.data;
-          this.location = "";
-        })
-        .catch(error => {
-          //need proper error presentation
-          if ((error = "Request failed with status code 404")) {
-            this.errors = "Wrong City Name, Please try correct city name";
-            this.location = "";
-            alert(this.errors);
-          }
-        });
+      // axios
+      //   .get(
+      //     `https://api.openweathermap.org/data/2.5/weather?q=${ 
+      //       this.location
+      //     }&appid=37c74120d05b58e1807a5286598c9d90&units=metric`,
+      //   )
+      //   .then(data => {
+      //     this.$store.state.forecast = data.data;
+      //     this.location = "";
+      //   })
+      //   .catch(error => {
+      //     //need proper error presentation
+      //     if ((error = "Request failed with status code 404")) {
+      //       this.errors = "Wrong City Name, Please try correct city name";
+      //       this.location = "";
+      //       alert(this.errors);
+      //     }
+      //   });
+      this.$store.state.city = this.location;
+      this.location = '';
+      this.$store.commit('UPDATE');
     }
   }
 };
